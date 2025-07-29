@@ -12,6 +12,9 @@ import UserBase from './components/pages/user/UserBase';
 import UserHome from './components/pages/user/UserHome';
 import PrivateRoute from './components/PrivateRoute';
 import LogOut from './components/LogOut';
+import WebsiteEvents from './components/pages/website/WebsiteEvents';
+import GuideLines from './components/pages/website/GuideLines';
+import WebsiteContact from './components/pages/website/WebsiteContact';
 
 function App() {
 
@@ -20,6 +23,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/events" element={<WebsiteEvents />} />
+          <Route path="/guidelines" element={<GuideLines />} />
+          <Route path="/contact" element={<WebsiteContact />} />
+
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/logout' element={<LogOut />} />

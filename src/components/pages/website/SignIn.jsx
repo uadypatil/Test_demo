@@ -63,7 +63,7 @@ function SignIn() {
                     <form action="" onSubmit={handleSubmit}>
                         <h1 className='mt-4 text-white text-center'>Sign In</h1>
 
-                        <div className="row my-5 mx-5 px-5">
+                        <div className="row my-5">
                             <div className="col-12">
                                 <label htmlFor="" className='form-label'>Username</label>
                                 <input
@@ -91,7 +91,7 @@ function SignIn() {
                             </div>
 
                             <div className="col-12 mt-4">
-                                <div className="d-flex gap-2">
+                                <div className="d-flex gap-2 sign-in-check-box-flex">
                                     <input type="checkbox" name="" id="confirmMe" className='form-check' required />
                                     <label htmlFor="" className='form-label'>By checking, I confirm to be logged in!</label>
                                 </div>
@@ -103,7 +103,7 @@ function SignIn() {
                                 </button>
                             </div>
 
-                            <div className="col-12 mt-4">
+                            <div className="col-12 mt-4 text-center">
                                 <label htmlFor="" className='form-label'>Don't have account, <a href="/signup">sign up</a> now!</label>
 
                             </div>

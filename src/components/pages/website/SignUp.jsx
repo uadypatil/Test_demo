@@ -147,7 +147,7 @@ function SignUp() {
     // ✅ Define the form as a function inside the component
     const renderAddEventForm = () => {
         return (
-            <div className="sign-in-container p-5 rounded-5">
+            <div className="sign-in-container p-4 rounded-5">
                 <form
                     onSubmit={handleEventManagerSubmit}
                     noValidate
@@ -227,7 +227,7 @@ function SignUp() {
                     style={{ height: '80dvh', overflowY: 'scroll' }}>
                     <h1 className='mt-4 text-white text-center'>Register Event Organizer</h1>
 
-                    <div className="row my-5 mx-5 px-5">
+                    <div className="row my-5">
                         <div className="col-12">
                             <label className='form-label'>Full Name</label>
                             <input
@@ -307,7 +307,7 @@ function SignUp() {
             {/* Card Selection */}
             <div className="sign-in-container rounded-5" ref={redirectRef}>
                 <div className="row p-5">
-                    <div className="col-lg-6 rounded-4">
+                    <div className="col-lg-6 p-2 rounded-4">
                         <div onClick={loadDonerForm} className="card border-2 shadow text-white" style={{ height: '200px', background: 'none', cursor: 'pointer' }}>
                             <div className="card-body d-flex justify-content-center align-items-center" style={{ flexDirection: 'column' }}>
                                 <p>Register As</p>
@@ -316,7 +316,7 @@ function SignUp() {
                         </div>
                     </div>
 
-                    <div className="col-lg-6 rounded-4">
+                    <div className="col-lg-6 p-2 rounded-4">
                         <div onClick={loadEventForm} className="card border-2 shadow text-white" style={{ height: '200px', background: 'none', cursor: 'pointer' }}>
                             <div className="card-body d-flex justify-content-center align-items-center" style={{ flexDirection: 'column' }}>
                                 <p>Register As</p>

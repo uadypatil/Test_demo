@@ -40,6 +40,12 @@
   transition: width 0.5s ease;
 }
 
+@media screen AND (max-width: 500px) {
+  .caption-container {
+    width: 90vw;
+  }
+}
+
 .caption-container.expanded {
   width: 100%;
 }
@@ -387,7 +393,7 @@ formbody button {
   background: linear-gradient(to right, #84d9d2, #07cdae) !important;
 }
 
-ul .nav-item:hover {
+.admin-sidebar ul .nav-item:hover {
   background: linear-gradient(to right, #90caf9, #f7f7f7 99%) !important;
   color: #000000 !important;
   transition: 0.3s ease !important;
@@ -412,6 +418,32 @@ ul .nav-item:hover {
   background: linear-gradient(to right, rgba(255, 191, 150, 0.8), rgba(254, 112, 150, 0.8));
   backdrop-filter: blur(2px);
 
+}
+
+.sign-in-container .row {
+  margin-left: 3rem;
+  margin-right: 3rem;
+
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+@media screen AND (max-width: 500px) {
+  .sign-in-container {
+    width: 90dvw;
+  }
+
+  .sign-in-container .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .sign-in-check-box-flex {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .sign-in-body {
@@ -468,9 +500,28 @@ ul .nav-item:hover {
   .hero-banner-responsive {
     text-align: center;
   }
+
   .hero-banner-responsive .d-flex {
     flex-direction: column;
   }
 
 
+  .search-nearby-events-fields {
+    flex-direction: column;
+  }
+}
+.animate-chatbot {
+  animation: floatUpDown 2s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
