@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AOS from 'aos';
-import '../../../App.css';
 import 'aos/dist/aos.css';
+import '../../../App.css';
 
-const EventRegistrationForm = () => {
+const FeedbackForm = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const [formData, setFormData] = useState({
-    eventName: '',
-    organizerName: '',
-    organizerContact: '',
-    firmName: '',
-    firmContact: '',
-    description: '',
-    qrCode: null,
+    fullName: '',
+    contactNumber: '',
+    email: '',
+    feedbackType: '',
+    message: '',
     agreement: false,
   });
 
@@ -21,29 +23,36 @@ const EventRegistrationForm = () => {
 
   const validate = () => {
     const newErrors = {};
-    if (!formData.eventName) newErrors.eventName = 'Please enter the event or festival name.';
-    if (!formData.organizerName) newErrors.organizerName = 'Please enter the organizer name.';
-    if (!formData.organizerContact.match(/^\d{10}$/)) newErrors.organizerContact = 'Enter valid 10-digit contact.';
-    if (!formData.firmName) newErrors.firmName = 'Please enter the firm name.';
-    if (!formData.firmContact.match(/^\d{10}$/)) newErrors.firmContact = 'Enter valid 10-digit firm contact.';
-    if (!formData.description) newErrors.description = 'Please provide a description.';
+    if (!formData.fullName) newErrors.fullName = 'Please enter your full name.';
+    if (!formData.contactNumber.match(/^\d{10}$/)) newErrors.contactNumber = 'Enter a valid 10-digit contact number.';
+    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Enter a valid email address.';
+    if (!formData.feedbackType) newErrors.feedbackType = 'Please select a feedback type.';
+    if (!formData.message) newErrors.message = 'Please enter your message.';
     if (!formData.agreement) newErrors.agreement = 'You must agree before submitting.';
     return newErrors;
   };
 
   const handleChange = (e) => {
-    const { name, value, type, checked, files } = e.target;
-    const fieldValue = type === 'checkbox' ? checked : type === 'file' ? files[0] : value;
-    setFormData((prev) => ({ ...prev, [name]: fieldValue }));
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length === 0) {
-      console.log('Form data:', formData);
+      console.log('Feedback submitted:', formData);
       setSubmitted(true);
       setErrors({});
+      // Optionally reset form
+      setFormData({
+        fullName: '',
+        contactNumber: '',
+        email: '',
+        feedbackType: '',
+        message: '',
+        agreement: false,
+      });
     } else {
       setErrors(validationErrors);
       setSubmitted(false);
@@ -51,105 +60,98 @@ const EventRegistrationForm = () => {
   };
 
   return (
-    <div className="formbody">
+    <div className="formbody" data-aos="fade-up">
       <form onSubmit={handleSubmit} className="registration-form" noValidate>
-        <h2>Register Event / Festival</h2>
+        <h2 className="mb-4">Give Your Feedback</h2>
 
-        <div className="form-group">
-          <label>Event / Festival Name</label>
+        <div className="form-group mb-3">
+          <label>Full Name</label>
           <input
             type="text"
-            name="eventName"
-            value={formData.eventName}
+            name="fullName"
+            value={formData.fullName}
             onChange={handleChange}
+            className="form-control"
           />
-          {errors.eventName && <span className="error">{errors.eventName}</span>}
+          {errors.fullName && <span className="error text-danger">{errors.fullName}</span>}
         </div>
 
-        <div className="form-group">
-          <label>Organizer Name</label>
-          <input
-            type="text"
-            name="organizerName"
-            value={formData.organizerName}
-            onChange={handleChange}
-          />
-          {errors.organizerName && <span className="error">{errors.organizerName}</span>}
-        </div>
-
-        <div className="form-group">
-          <label>Organizer Contact Number</label>
+        <div className="form-group mb-3">
+          <label>Contact Number</label>
           <input
             type="tel"
-            name="organizerContact"
-            value={formData.organizerContact}
+            name="contactNumber"
+            value={formData.contactNumber}
             onChange={handleChange}
+            className="form-control"
           />
-          {errors.organizerContact && <span className="error">{errors.organizerContact}</span>}
+          {errors.contactNumber && <span className="error text-danger">{errors.contactNumber}</span>}
         </div>
 
-        <div className="form-group">
-          <label>Firm Name</label>
+        <div className="form-group mb-3">
+          <label>Email (optional)</label>
           <input
-            type="text"
-            name="firmName"
-            value={formData.firmName}
+            type="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
+            className="form-control"
           />
-          {errors.firmName && <span className="error">{errors.firmName}</span>}
+          {errors.email && <span className="error text-danger">{errors.email}</span>}
         </div>
 
-        <div className="form-group">
-          <label>Firm Contact Number</label>
-          <input
-            type="tel"
-            name="firmContact"
-            value={formData.firmContact}
+        <div className="form-group mb-3">
+          <label>Feedback Type</label>
+          <select
+            name="feedbackType"
+            value={formData.feedbackType}
             onChange={handleChange}
-          />
-          {errors.firmContact && <span className="error">{errors.firmContact}</span>}
+            className="form-control"
+          >
+            <option value="">Select Type</option>
+            <option value="Suggestion">Suggestion</option>
+            <option value="Complaint">Complaint</option>
+            <option value="Appreciation">Appreciation</option>
+            <option value="Other">Other</option>
+          </select>
+          {errors.feedbackType && <span className="error text-danger">{errors.feedbackType}</span>}
         </div>
 
-        <div className="form-group">
-          <label>Event / Festival Description</label>
+        <div className="form-group mb-3">
+          <label>Feedback Message</label>
           <textarea
-            name="description"
+            name="message"
             rows="4"
-            value={formData.description}
+            value={formData.message}
             onChange={handleChange}
-          ></textarea>
-          {errors.description && <span className="error">{errors.description}</span>}
-        </div>
-
-        <div className="form-group">
-          <label>Upload QR Code for Online Payment (optional)</label>
-          <input
-            type="file"
-            name="qrCode"
-            accept="image/*"
-            onChange={handleChange}
+            className="form-control"
           />
+          {errors.message && <span className="error text-danger">{errors.message}</span>}
         </div>
 
-        <div className="form-group checkbox">
+        <div className="form-check mb-3">
           <input
+            className="form-check-input"
             type="checkbox"
             name="agreement"
             checked={formData.agreement}
             onChange={handleChange}
+            id="agreementCheck"
           />
-          <label>I agree for registration</label>
-          {errors.agreement && <span className="error">{errors.agreement}</span>}
+          <label className="form-check-label" htmlFor="agreementCheck">
+            I agree that the feedback provided is genuine and constructive.
+          </label>
+          {errors.agreement && <span className="error text-danger d-block">{errors.agreement}</span>}
         </div>
 
         <div className="form-group">
-          <button type="submit" className='btn btn-teal'>Submit</button>
+          <button type="submit" className="btn btn-primary">Submit Feedback</button>
         </div>
 
-        {submitted && <div className="success-msg">Form submitted successfully!</div>}
+        {submitted && <div className="alert alert-success mt-3">Thank you! Your feedback has been submitted.</div>}
       </form>
     </div>
   );
 };
 
-export default EventRegistrationForm;
+export default FeedbackForm;

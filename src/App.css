@@ -83,10 +83,7 @@
 }
 
 .festival-block {
-  height: 90vh;
-  max-height: 100vh;
-
-
+  height: auto;
 }
 
 .festival-block img {
@@ -100,7 +97,7 @@
 }
 
 .festival-img {
-  height: 100%;
+  height: auto;
   width: auto;
   object-fit: cover;
   border-radius: 20% 10px 10px 70%;
@@ -109,7 +106,7 @@
 
 .formbody {
   background: linear-gradient(135deg, #e0eafc, #cfdef3);
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,8 +118,16 @@
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  width: 100%;
-  max-width: 60vw;
+  width: 60%;
+}
+
+@media screen AND (max-width: 500px) {
+
+  .registration-form {
+    animation: slideIn 1s ease;
+    width: 90%;
+  }
+
 }
 
 @keyframes slideIn {
@@ -160,7 +165,6 @@
 }
 
 .registration-form {
-  max-width: 60%;
   margin: auto;
   background: #fff;
   padding: 2rem;
@@ -444,4 +448,29 @@ ul .nav-item:hover {
 ::-webkit-scrollbar-corner {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
+}
+
+@media screen AND (max-width: 500px) {
+  .hero-enroll-event {
+    flex-direction: column;
+  }
+
+  .hero-enroll-event input {
+    height: 100%;
+  }
+
+  .hero-enroll-event button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+
+  .hero-banner-responsive {
+    text-align: center;
+  }
+  .hero-banner-responsive .d-flex {
+    flex-direction: column;
+  }
+
+
 }

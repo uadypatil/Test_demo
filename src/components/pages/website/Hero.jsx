@@ -10,7 +10,7 @@ import event2 from '../../../assets/event2.jpeg';
 import event4 from '../../../assets/event4.jpeg';
 // import event5 from '../../../assets/event5.jpeg';
 // import event6 from '../../../assets/event6.jpeg';
-import EventRegistrationForm from './EventRegistrationForm';
+import FeedbackForm from './EventRegistrationForm';
 import ClientCarousel from './ClientCarousel';
 
 function Home() {
@@ -56,11 +56,10 @@ function Home() {
             <div className="hero">
                 {/* This is search bar */}
                 <div className="container my-3" data-aos="fade-up">
-                    <div className="bg-white rounded-3 shadow px-4 py-3 d-flex align-items-center">
+                    <div className="bg-white rounded-3 shadow px-4 py-3 d-flex align-items-center hero-enroll-event">
 
                         {/* Search icon and input */}
-                        <div className="flex-grow-1 d-flex align-items-center">
-                            <i className="bi bi-search fs-5 text-muted me-2"></i>
+                        <div className="flex-grow-1 d-flex align-items-center w-100">
                             <input
                                 type="text"
                                 className="form-control border-1 border-secondary-emphasis fw-semibold fs-5"
@@ -99,14 +98,14 @@ function Home() {
                             <p className="pb-5">Animated receipt</p>
 
                             <div className="hero-banner mb-5">
-                                <div className="row justify-content-center w-100">
-                                    <div className="col-lg-6 rounded-3 bg-white text-dark">
+                                <div className="row justify-content-center w-100 ms-0 px-2">
+                                    <div className="col-lg-6 rounded-3 bg-white text-dark hero-banner-responsive">
                                         <div className="d-flex justify-content-between mx-3 my-2">
                                             <div className="d-flex align-items-center">
                                                 <p className="fs-3 m-0">Enroll Event</p>
                                             </div>
                                             <div className="d-flex align-items-center gap-2">
-                                                <span className="fs-5 text-success">Free</span>
+                                                <span className="fs-5 text-success">For Free</span>
                                                 <button className="btn btn-dark">Enroll Now</button>
                                             </div>
                                         </div>
@@ -143,14 +142,14 @@ function Home() {
                 </div>
 
                 <div className="container-fluid festival-block">
-                    <div className="row h-100">
-                        <div className="col-lg-6 h-100">
-                            <img src={event2} alt="" className="festival-img" data-aos="fade-right" />
+                    <div className="row h-auto">
+                        <div className="col-lg-6 col-md-6 cl-sm-12 col-12">
+                            <img src={event2} alt="" className="festival-img img-fluid" data-aos="fade-right" />
                         </div>
-                        <div className="col-lg-6 text-end">
+                        <div className="col-lg-6 col-md-6 cl-sm-12 col-12 text-end">
                             <p className="fs-2" data-aos="fade-right">Great Software for Great Festivals</p>
                             <div className="d-flex justify-content-end" data-aos="fade-left">
-                                <div className="w-50">
+                                <div className="w-100">
                                     <p className="text-justify" style={{ textAlign: 'justify' }}>
                                         The Dengi receipt maintaining software is designed to streamline the process of managing
                                         financial contributions during festivals and events. It includes modules for registering
@@ -168,7 +167,7 @@ function Home() {
                                 </div>
                             </div>
                             <div className="d-flex justify-content-end" data-aos="fade-left">
-                                <div className="w-50">
+                                <div className="w-100">
                                     <p style={{ textAlign: 'justify' }}>
                                         A key highlight of the application is the ability to generate QR codes for each receipt,
                                         which link to a visually appealing animated receipt that can be shared online through
@@ -189,7 +188,7 @@ function Home() {
                 <br /><br />
 
                 {/* EVENT REGISTRATION FORM */}
-                <EventRegistrationForm />
+                <FeedbackForm />
 
                 {/* CLIENT CAROUSEL */}
                 <ClientCarousel />
