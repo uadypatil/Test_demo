@@ -4,6 +4,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../../../App.css';
 import AdminSidebar from '../includes/AdminSidebar';
+import qrcode from '../../../assets/qrcode.png';
+import DurationSelector from '../../utils/DurationSelector';
 
 function Events() {
 
@@ -65,60 +67,56 @@ function Events() {
                     <h4 className="fw-semibold">Dashboard</h4>
                 </div>
             </div>
+            <div className="col-12 my-3">
+                <button className='btn btn-success'>
+                    Save
+                </button>
+            </div>
 
-            <div className="row mt-5 px-4">
-                <div className="col-12 border-1 shadow rounded-4">
-                    <div className="table-responsive w-100" style={{ maxHeight: '400px', overflowY: 'scroll' }}>
-                        <table className="table rounded-4 w-100">
-                            <thead className="table-dark">
-                                <tr>
-                                    <th>Sr. No.</th>
-                                    <th>Event Name</th>
-                                    <th>Event Organizer</th>
-                                    <th>Event Revenue</th>
-                                    <th>Event Location</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {events.length > 0 ? (
-                                    events.map((event, index) => (
-                                        <tr key={event.id}>
-                                            <td>{index + 1}</td>
-                                            <td>{event.name}</td>
-                                            <td>{event.organizer}</td>
-                                            <td>{event.revenue}/-</td>
-                                            <td>{event.location}</td>
-                                            <td>
-                                                <button className="btn btn-light btn-sm">manage</button>
-                                            </td>
-                                        </tr>
-                                    ))
-                                ) : (
-                                    <tr>
-                                        <td colSpan="6" className="text-center">No events available</td>
-                                    </tr>
-                                )}
-                            </tbody>
-                        </table>
+            <div className="row event-form-flex mt-5" style={{ display: 'flex' }}>
+                <div className="col-lg-8 col-md-8 col-sm-12 col-12 border-1 shadow rounded-4 pb-5">
+                    <div className="no-bg-important my-3">
+                        <input
+                            type="text"
+                            name=""
+                            id=""
+                            className="form-control fw-semibold fs-4"
+                            placeholder="Festival/ event name"
+                        />
+                        <DurationSelector />
+
+                        <div className='mt-3'>
+                            <label htmlFor="" className='form-label'>From date</label>
+                            <input type="date" name="" id="" className='form-control' />
+                        </div>
+
+                        <div className='mt-3'>
+                            <label htmlFor="" className='form-label'>To date</label>
+                            <input type="date" name="" id="" className='form-control' />
+                        </div>
+
+                        <div className="d-flex gap-3 flex-direction-adjust mt-3">
+                            <div className="card shadow flex-fill-1 p-4">
+                                <h4>Event Managers</h4>
+                                <h1 className='text-success'>0</h1>
+                            </div>
+                            <div className="card shadow flex-fill-1 p-4">
+                                <h4>Receipts</h4>
+                                <h1 className='text-success'>0</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    );
-}
+                <div className="col-lg-4 col-md-4 col-sm-12 col-12 p-2 border-1 shadow rounded-4">
+                    <div className="d-flex image-events-fluid w-100">
+                        <img src={qrcode} alt="" className='img-fluid rounded-3' />
+                    </div>
+                    <p className='text-center'>Event Manager Registration</p>
 
-// ✅ Reusable Card Component
-function DashboardCard({ title, value }) {
-    return (
-        <div className="col-lg-4 col-md-6 col-sm-12 p-4">
-            <div className="card border shadow rounded-4 h-100">
-                <div className="card-body text-center">
-                    <h4>{title}</h4>
-                    <h1 className="display-5 fw-semibold">{value}</h1>
                 </div>
             </div>
+
         </div>
     );
 }

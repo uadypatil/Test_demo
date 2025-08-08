@@ -1,38 +1,65 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import logo from '../../../assets/logo.png'; // Adjust the path accordingly
+import logo from '../../../assets/logo.png';
 
 function UserNavbar() {
     return (
-        <>
-            {/* Sidebar */}
-            <div className="bg-white text-white m-2 rounded rounded-5  card-blue">
-                <div className="d-flex justify-content-between align-items-center">
-                    <ul className="nav flex-row p-3 ">
-                        <li className="nav-item text-end">
-                            <a className="nav-link text-white fw-semibold" href="dashboard">
-                                <i className="fa-solid fa-house me-2"></i> Dashboard
-                            </a>
-                        </li>
-                        <li className="nav-item text-end">
-                            <a className="nav-link text-white" href="reports">
-                                <i className="fa-solid fa-book me-2"></i> Revenue Report
-                            </a>
-                        </li>
-                        <li className="nav-item text-end">
-                            <a className="nav-link text-white" href="#">
-                                <i className="fa-solid fa-right-from-bracket me-2"></i> Logout
-                            </a>
-                        </li>
-                    </ul>
+        <div className="container">
 
-                    <div className="pe-4">
-                        <img src={logo} alt="Logo" className="me-2 img-fluid" style={{ width: '120px', height: 'auto' }} />
+            <nav className="navbar navbar-expand-lg navbar-dark bg-primary m-2 rounded-5 px-3">
+                <div className="container-fluid">
+                    {/* Brand / Logo */}
+                    <a className="navbar-brand d-lg-none" href="#">
+                        <img src={logo} alt="Logo" className="img-fluid" style={{ width: '100px', height: 'auto' }} />
+                    </a>
+
+                    {/* Toggler for small screens */}
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarResponsive"
+                        aria-controls="navbarResponsive"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+
+                    {/* Collapsible Content */}
+                    <div className="collapse navbar-collapse justify-content-between" id="navbarResponsive">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <a className="nav-link fw-semibold text-white" href="/em/dashboard">
+                                    <i className="fa-solid fa-house me-2"></i>Dashboard
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-white" href="/em/revenue/report">
+                                    <i className="fa-solid fa-book me-2"></i>Revenue Report
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-white" href="/em/profile/me">
+                                    <i className="fa-solid fa-book me-2"></i>My Profile
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link text-white" href="/logout">
+                                    <i className="fa-solid fa-right-from-bracket me-2"></i>Logout
+                                </a>
+                            </li>
+                        </ul>
+
+                        {/* Logo (visible on large screens) */}
+                        <div className="d-none d-lg-block">
+                            <img src={logo} alt="Logo" className="img-fluid" style={{ width: '120px', height: 'auto' }} />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </>
+            </nav>
+        </div>
     );
 }
 

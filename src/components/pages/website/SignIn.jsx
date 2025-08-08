@@ -59,9 +59,9 @@ function SignIn() {
     return (
         <>
             <div className="d-flex justify-content-center align-items-center sign-in-body" style={{ height: '100dvh', width: '100dvw' }}>
-                <div className="sign-in-container rounded-5">
+                <div className="sign-in-container border shadow rounded-5">
                     <form action="" onSubmit={handleSubmit}>
-                        <h1 className='mt-4 text-white text-center'>Sign In</h1>
+                        <h1 className='mt-4 text-dark text-center'>Sign In</h1>
 
                         <div className="row my-5">
                             <div className="col-12">

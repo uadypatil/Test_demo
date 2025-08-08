@@ -358,6 +358,11 @@ formbody button {
   background-color: #f8f9fa;
   height: 98dvh;
   overflow-y: auto;
+
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-right: 1rem;
@@ -366,6 +371,8 @@ formbody button {
 @media screen AND (max-width: 500px) {
   .main-wrapper {
     margin: 0px;
+    padding-left: 0rem;
+    padding-right: 0rem;
     height: auto;
   }
 
@@ -415,7 +422,7 @@ formbody button {
 .sign-in-container {
   height: auto;
   width: 40dvw;
-  background: linear-gradient(to right, rgba(255, 191, 150, 0.8), rgba(254, 112, 150, 0.8));
+  background: linear-gradient(to right, rgba(144, 202, 249, 0.5), rgba(247, 247, 247, 0.5) 99%);
   backdrop-filter: blur(2px);
 
 }
@@ -447,7 +454,7 @@ formbody button {
 }
 
 .sign-in-body {
-  background: url('assets/image.png');
+  background: url('assets/signinbg.webp');
   background-position: center;
   background-size: cover;
 
@@ -509,7 +516,14 @@ formbody button {
   .search-nearby-events-fields {
     flex-direction: column;
   }
+
+
+  .admin-sidebar {
+    width: 300px !important;
+    height: 100dvh !important;
+  }
 }
+
 .animate-chatbot {
   animation: floatUpDown 2s ease-in-out infinite;
 }
@@ -518,10 +532,34 @@ formbody button {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0);
+  }
+}
+
+
+/* ORGANIZER DASHBOARD */
+.no-bg-important {
+  background: none !important;
+}
+
+.event-form-flex {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+@media screen AND (max-width: 500px) {
+  .flex-direction-adjust {
+    flex-direction: column;
+  }
+
+  .event-form-flex {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 }

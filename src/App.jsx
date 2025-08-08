@@ -15,6 +15,15 @@ import LogOut from './components/LogOut';
 import WebsiteEvents from './components/pages/website/WebsiteEvents';
 import GuideLines from './components/pages/website/GuideLines';
 import WebsiteContact from './components/pages/website/WebsiteContact';
+import Events from './components/pages/admin/Events';
+import EventManagers from './components/pages/admin/EventManagers';
+import EventManagerBase from './components/pages/event_manager/EventManagerBase';
+import EventManagerHome from './components/pages/event_manager/EventManagerHome';
+import LoadQrScreen from './components/pages/event_manager/LoadQrScreen';
+import EventManagerNewDonationForm from './components/pages/event_manager/EventManagerNewDonationForm';
+import ViewDonatedProfile from './components/pages/event_manager/ViewDonatedProfile';
+import EventManagerRevenueReport from './components/pages/event_manager/EventManagerRevenueReport';
+import EventManagerProfile from './components/pages/event_manager/EventManagerProfile';
 
 function App() {
 
@@ -34,24 +43,32 @@ function App() {
           <Route
             path="/admin"
             element={
-              <PrivateRoute>
+              // <PrivateRoute>
                 <Base />
-              </PrivateRoute>
+              // </PrivateRoute>
             }
           >
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="reports" element={<Report />} />
+            <Route path="events/managers" element={<EventManagers />} />
+            <Route path="events" element={<Events />} />
           </Route>
           
           <Route
-            path="/user"
+            path="/em"
             element={
-              <PrivateRoute>
-                <UserBase />
-              </PrivateRoute>
+              // <PrivateRoute>
+                <EventManagerBase />
+              // </PrivateRoute>
             }
           >
-            <Route path="home" element={<UserHome />} />
+            <Route path="dashboard" element={<EventManagerHome />} />
+            <Route path="revenue" element={<EventManagerHome />} />
+            <Route path="loadqr" element={<LoadQrScreen />} />
+            <Route path="donation/new" element={<EventManagerNewDonationForm />} />
+            <Route path="doner/profile" element={<ViewDonatedProfile />} />
+            <Route path="revenue/report" element={<EventManagerRevenueReport />} />
+            <Route path="profile/me" element={<EventManagerProfile />} />
           </Route>
 
         </Routes>

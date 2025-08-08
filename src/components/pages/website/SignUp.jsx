@@ -153,7 +153,7 @@ function SignUp() {
                     noValidate
                     style={{ height: '80dvh', overflowY: 'scroll' }}
                 >
-                    <h1 className='mt-4 text-white text-center'>Register Event Manager</h1>
+                    <h1 className='mt-4 text-dark text-center'>Register Event Manager</h1>
 
                     <div className="form-group mt-3">
                         <input
@@ -225,7 +225,7 @@ function SignUp() {
                 <form
                     onSubmit={handleDonerSubmit}
                     style={{ height: '80dvh', overflowY: 'scroll' }}>
-                    <h1 className='mt-4 text-white text-center'>Register Event Organizer</h1>
+                    <h1 className='mt-4 text-dark text-center'>Register Event Organizer</h1>
 
                     <div className="row my-5">
                         <div className="col-12">
@@ -308,7 +308,7 @@ function SignUp() {
             <div className="sign-in-container rounded-5" ref={redirectRef}>
                 <div className="row p-5">
                     <div className="col-lg-6 p-2 rounded-4">
-                        <div onClick={loadDonerForm} className="card border-2 shadow text-white" style={{ height: '200px', background: 'none', cursor: 'pointer' }}>
+                        <div onClick={loadDonerForm} className="card border-2 shadow text-dark" style={{ height: '200px', background: 'none', cursor: 'pointer' }}>
                             <div className="card-body d-flex justify-content-center align-items-center" style={{ flexDirection: 'column' }}>
                                 <p>Register As</p>
                                 <h1 className='text-center'>Event Organizer</h1>
@@ -317,7 +317,7 @@ function SignUp() {
                     </div>
 
                     <div className="col-lg-6 p-2 rounded-4">
-                        <div onClick={loadEventForm} className="card border-2 shadow text-white" style={{ height: '200px', background: 'none', cursor: 'pointer' }}>
+                        <div onClick={loadEventForm} className="card border-2 shadow text-dark" style={{ height: '200px', background: 'none', cursor: 'pointer' }}>
                             <div className="card-body d-flex justify-content-center align-items-center" style={{ flexDirection: 'column' }}>
                                 <p>Register As</p>
                                 <h1 className='text-center'>Event Manager</h1>

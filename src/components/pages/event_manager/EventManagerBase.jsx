@@ -4,20 +4,17 @@ import { Outlet } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../../../App.css';
-import AdminSidebar from '../includes/AdminSidebar';
+import UserNavbar from '../includes/UserNavbar';
 
-function Base() {
+function EventManagerBase() {
     return (
-        <div className="wrapper d-flex">
-            <AdminSidebar />
-            <div
-                className="main-wrapper flex-grow-1"
-                data-aos="fade-up"
-            >
+        <>
+            <UserNavbar />
+            <div className="container" data-aos="fade-up">
                 <Outlet /> {/* This will render nested route components */}
             </div>
-        </div>
+        </>
     );
 }
 
-export default Base;
+export default EventManagerBase;

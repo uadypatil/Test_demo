@@ -1,4 +1,4 @@
-import React, {  } from 'react';
+import React, { } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import logo from '../../../assets/logo.png';
@@ -10,12 +10,12 @@ function AdminSidebar() {
         <>
             {/* Toggle Button - Only visible on small screens */}
             <button
-                className="btn btn-primary d-lg-none m-2"
+                className="btn btn-sm btn-primary d-lg-none m-2"
                 type="button"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasSidebar"
                 aria-controls="offcanvasSidebar"
-                style={{ height: '50px', width: '70px' }}
+                style={{ height: '35px', width: '60px' }}
             >
                 Menu
             </button>
@@ -29,6 +29,16 @@ function AdminSidebar() {
                     <li className="nav-item text-end">
                         <a className="nav-link text-white fw-semibold" href="dashboard">
                             <i className="fa-solid fa-house me-2"></i> Dashboard
+                        </a>
+                    </li>
+                    <li className="nav-item text-end">
+                        <a className="nav-link text-white" href="events">
+                            <i className="fa-solid fa-book me-2"></i> Event
+                        </a>
+                    </li>
+                    <li className="nav-item text-end">
+                        <a className="nav-link text-white" href="events/managers">
+                            <i className="fa-solid fa-book me-2"></i> Event Managers
                         </a>
                     </li>
                     <li className="nav-item text-end">
@@ -63,6 +73,16 @@ function AdminSidebar() {
                         <li className="nav-item text-end">
                             <a className="nav-link text-dark fw-semibold" href="dashboard">
                                 <i className="fa-solid fa-house me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li className="nav-item text-end">
+                            <a className="nav-link text-dark" href="events">
+                                <i className="fa-solid fa-book me-2"></i> Event
+                            </a>
+                        </li>
+                        <li className="nav-item text-end">
+                            <a className="nav-link text-dark" href="events/managers">
+                                <i className="fa-solid fa-book me-2"></i> Event managers
                             </a>
                         </li>
                         <li className="nav-item text-end">
