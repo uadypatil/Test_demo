@@ -6,6 +6,7 @@ import axios from 'axios'; // At the top of your file
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../../../App.css';
+import api_url from '../../../config';
 
 function SignUp() {
     const navigate = useNavigate();
@@ -84,7 +85,7 @@ function SignUp() {
         console.log(formData);
 
         try {
-            const response = await axios.post('http://localhost/eDengiSystem/EventManager/save', {
+            const response = await axios.post(api_url+'EventManager/save', {
                 event_id: formData.event_id,
                 event_manager_name: formData.event_manager_name,
                 event_manager_contact_number: formData.event_manager_contact_number,

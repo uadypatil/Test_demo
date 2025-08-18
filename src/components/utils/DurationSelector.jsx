@@ -1,19 +1,35 @@
-import React, { useState } from 'react';
+import React, {  } from 'react';
 
-const DurationSelector = () => {
-    const [duration, setDuration] = useState('');
-    const [fromTime, setFromTime] = useState('');
-    const [toTime, setToTime] = useState('');
-
+const DurationSelector = ({ value, fromTime, toTime, onChange }) => {
     const handleDurationChange = (e) => {
-        setDuration(e.target.value);
+        onChange({
+            duration: e.target.value,
+            fromTime,
+            toTime
+        });
+    };
+
+    const handleFromTimeChange = (e) => {
+        onChange({
+            duration: value,
+            fromTime: e.target.value,
+            toTime
+        });
+    };
+
+    const handleToTimeChange = (e) => {
+        onChange({
+            duration: value,
+            fromTime,
+            toTime: e.target.value
+        });
     };
 
     return (
         <div>
             <select
                 className="form-select text-success mt-3"
-                value={duration}
+                value={value}
                 onChange={handleDurationChange}
             >
                 <option value="" disabled>Select Duration</option>
@@ -21,7 +37,7 @@ const DurationSelector = () => {
                 <option value="Custom">Custom Time</option>
             </select>
 
-            {duration === 'Custom' && (
+            {value === 'Custom' && (
                 <div className="mt-3">
                     <input
                         type="time"
@@ -29,7 +45,7 @@ const DurationSelector = () => {
                         className="form-control mb-2"
                         placeholder="From time"
                         value={fromTime}
-                        onChange={(e) => setFromTime(e.target.value)}
+                        onChange={handleFromTimeChange}
                     />
                     <input
                         type="time"
@@ -37,7 +53,7 @@ const DurationSelector = () => {
                         className="form-control"
                         placeholder="To time"
                         value={toTime}
-                        onChange={(e) => setToTime(e.target.value)}
+                        onChange={handleToTimeChange}
                     />
                 </div>
             )}

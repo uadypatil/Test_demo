@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import base_url from '../config'; 
+import api_url from '../config'; 
 
 const GetData = ({ route }) => {
   const [data, setData] = useState(null);
   const [status, setStatus] = useState(null);
 
   useEffect(() => {
-    const url = base_url + route;
+    const url = api_url + route;
 
     axios.get(url)
       .then(response => {

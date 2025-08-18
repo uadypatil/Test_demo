@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Montserrat:wght@400;600;700&display=swap");
+
 .navbar-dark {
   background-color: #1e1e1e;
 }
@@ -562,4 +564,248 @@ formbody button {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
+}
+
+.qr-wrapper {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+:root {
+  --bg1: #e020ff;
+  --bg2: #ffa1a1;
+  --ink: #fff6f0;
+  --accent: #ffd66e;
+  --radius: 20px;
+}
+
+.bg-animated-receipt {
+  background: linear-gradient(140deg, var(--bg1), var(--bg2));
+  padding: 28px 24px;
+  overflow-y: scroll;
+}
+
+.animated-receipt-container {
+  width: min(100%, 420px);
+  padding: 28px 24px;
+  /* background: linear-gradient(140deg, var(--bg1), var(--bg2)); */
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 10px 35px #00000035;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header */
+.animated-receipt-header {
+  text-align: center;
+}
+
+.animated-receipt-donor-name {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 18px #ffd66e55, 0 0 4px #ffd66eaa;
+  animation: animated-receipt-glow 3.5s ease-in-out infinite;
+}
+
+.animated-receipt-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.animated-receipt-thankyou {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5rem;
+  animation: animated-receipt-shimmer 4s linear infinite;
+}
+
+.animated-receipt-for {
+  opacity: 0.85;
+}
+
+.animated-receipt-org {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Details */
+.animated-receipt-details {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.animated-receipt-amount {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-shadow: 0 0 14px #ffd66e55;
+}
+
+.animated-receipt-amount span {
+  display: block;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.animated-receipt-meta {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Centerpiece */
+.animated-receipt-centerpiece {
+  text-align: center;
+}
+
+.animated-receipt-ganesha {
+  width: 250px;
+  height: 250px;
+  margin: 15px auto;
+  background: radial-gradient(circle at 50% 50%, var(--accent) 0 25%, transparent 56%);
+  border-radius: 50%;
+  /* filter: drop-shadow(0 0 12px #ffd66e66); */
+  animation: animated-receipt-breath 4.5s ease-in-out infinite;
+}
+
+/* QR */
+.animated-receipt-qr-wrap {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.animated-receipt-qr {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 0 6px #ffd66e33, 0 10px 30px #00000040;
+  animation: animated-receipt-pulse 2.8s ease-in-out infinite;
+}
+
+.animated-receipt-qr-caption {
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* Footer */
+.animated-receipt-footer {
+  text-align: center;
+}
+
+.animated-receipt-tagline {
+  opacity: 0.9;
+}
+
+/* Animations */
+@keyframes animated-receipt-glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px #ffd66e55;
+  }
+
+  50% {
+    text-shadow: 0 0 20px #ffd66ecc;
+  }
+}
+
+@keyframes animated-receipt-shimmer {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes animated-receipt-breath {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes animated-receipt-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 6px #ffd66e33;
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px #ffd66e66;
+  }
+}
+
+/* Desktop horizontal layout */
+@media (min-width: 900px) {
+  .animated-receipt-container {
+    width: min(100%, 960px);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 18px 28px;
+    text-align: left;
+  }
+
+  .animated-receipt-header {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .animated-receipt-details {
+    grid-column: 1 / 2;
+    text-align: left;
+  }
+
+  .animated-receipt-centerpiece {
+    grid-column: 2 / 3;
+  }
+
+  .animated-receipt-qr-wrap {
+    grid-column: 3 / 4;
+  }
+
+  .animated-receipt-footer {
+    grid-column: 1 / -1;
+  }
+}
+
+.hide-on-download {
+  /* default visible */
+}
+
+.download-hidden {
+  display: none !important;
 }

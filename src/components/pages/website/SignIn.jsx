@@ -6,6 +6,7 @@ import axios from 'axios'; // At the top of your file
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../../../App.css';
+import api_url from '../../../config';
 
 function SignIn() {
     const navigate = useNavigate();
@@ -37,7 +38,7 @@ function SignIn() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost/eDengiSystem/Main/authenticateUser', formData);
+            const response = await axios.post(api_url +'Main/authenticateUser', formData);
 
             console.log('API response:', response.data);
             alert('Login successful!');

@@ -2,6 +2,7 @@ import React, { } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import logo from '../../../assets/logo.png';
+import { Link } from "react-router-dom";
 
 function AdminSidebar() {
 
@@ -25,31 +26,32 @@ function AdminSidebar() {
                 <div className="mb-4 d-flex justify-content-center text-center w-100" style={{ flexDirection: 'column' }}>
                     <img src={logo} alt="Logo" className="me-2 img-fluid" />
                 </div>
+
                 <ul className="nav flex-column p-3">
                     <li className="nav-item text-end">
-                        <a className="nav-link text-white fw-semibold" href="dashboard">
+                        <Link className="nav-link text-white fw-semibold" to="dashboard">
                             <i className="fa-solid fa-house me-2"></i> Dashboard
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item text-end">
-                        <a className="nav-link text-white" href="events">
+                        <Link className="nav-link text-white" to="events/all">
                             <i className="fa-solid fa-book me-2"></i> Event
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item text-end">
-                        <a className="nav-link text-white" href="events/managers">
+                        <Link className="nav-link text-white" to="events/managers">
                             <i className="fa-solid fa-book me-2"></i> Event Managers
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item text-end">
-                        <a className="nav-link text-white" href="reports">
+                        <Link className="nav-link text-white" to="reports">
                             <i className="fa-solid fa-book me-2"></i> Revenue Report
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-item text-end">
-                        <a className="nav-link text-white" href="#">
+                        <Link className="nav-link text-white" to="/logout">
                             <i className="fa-solid fa-right-from-bracket me-2"></i> Logout
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
@@ -69,31 +71,32 @@ function AdminSidebar() {
                     <div className="mb-4 d-flex justify-content-center text-center w-100" style={{ flexDirection: 'column' }}>
                         <img src={logo} alt="Logo" className="me-2 img-fluid" />
                     </div>
+
                     <ul className="nav flex-column p-3">
                         <li className="nav-item text-end">
-                            <a className="nav-link text-dark fw-semibold" href="dashboard">
+                            <Link className="nav-link text-dark fw-semibold" to="dashboard">
                                 <i className="fa-solid fa-house me-2"></i> Dashboard
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item text-end">
-                            <a className="nav-link text-dark" href="events">
+                            <Link className="nav-link text-dark" to="events/all">
                                 <i className="fa-solid fa-book me-2"></i> Event
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item text-end">
-                            <a className="nav-link text-dark" href="events/managers">
-                                <i className="fa-solid fa-book me-2"></i> Event managers
-                            </a>
+                            <Link className="nav-link text-dark" to="events/managers">
+                                <i className="fa-solid fa-book me-2"></i> Event Managers
+                            </Link>
                         </li>
                         <li className="nav-item text-end">
-                            <a className="nav-link text-dark" href="reports">
+                            <Link className="nav-link text-dark" to="reports">
                                 <i className="fa-solid fa-book me-2"></i> Revenue Report
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item text-end">
-                            <a className="nav-link text-dark" href="#">
+                            <Link className="nav-link text-dark" to="/logout">
                                 <i className="fa-solid fa-right-from-bracket me-2"></i> Logout
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

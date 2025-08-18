@@ -24,6 +24,8 @@ import EventManagerNewDonationForm from './components/pages/event_manager/EventM
 import ViewDonatedProfile from './components/pages/event_manager/ViewDonatedProfile';
 import EventManagerRevenueReport from './components/pages/event_manager/EventManagerRevenueReport';
 import EventManagerProfile from './components/pages/event_manager/EventManagerProfile';
+import NewEventManager from './components/pages/event_manager/NewEventManager';
+import DonerAnimatedReceipt from './components/pages/website/DonarAnimatedReceipt';
 
 function App() {
 
@@ -35,6 +37,7 @@ function App() {
           <Route path="/events" element={<WebsiteEvents />} />
           <Route path="/guidelines" element={<GuideLines />} />
           <Route path="/contact" element={<WebsiteContact />} />
+          <Route path="doner/:donerid/receipt" element={<DonerAnimatedReceipt />} />
 
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
@@ -44,21 +47,22 @@ function App() {
             path="/admin"
             element={
               // <PrivateRoute>
-                <Base />
+              <Base />
               // </PrivateRoute>
             }
           >
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="reports" element={<Report />} />
             <Route path="events/managers" element={<EventManagers />} />
-            <Route path="events" element={<Events />} />
+            <Route path="events/all" element={<Events />} />
+            <Route path="event/:eventid/new" element={<NewEventManager />} />
           </Route>
-          
+
           <Route
             path="/em"
             element={
               // <PrivateRoute>
-                <EventManagerBase />
+              <EventManagerBase />
               // </PrivateRoute>
             }
           >

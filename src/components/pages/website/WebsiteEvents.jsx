@@ -6,50 +6,55 @@ import 'aos/dist/aos.css';
 import '../../../App.css';
 import NavbarCustom from '../includes/NavbarCustom';
 import EventCard from '../../utils/EventCard';
-import image1 from '../../../assets/event1.jpeg'
 
-// import { fetchEvents } from '../../../api/api'; // 🔁 Adjust path if needed
+import { fetchEvents } from '../../../api/api'; // 🔁 Adjust path if needed
 
 function WebsiteEvents() {
-    // const [events, setEvents] = useState([]);
-
-    // useEffect(() => {
-    //     AOS.init({ duration: 1000, once: true });
-
-    //     // Fetch events from API
-    //     const getEvents = async () => {
-    //         const data = await fetchEvents();
-    //         setEvents(data);
-    //     };
-
-    //     getEvents();
-    // }, []);
-
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
         AOS.init({ duration: 1000, once: true });
 
-        // Local events array
-        const localEvents = [
-            {
-                event_monetize_qr_path: image1,
-                event_sub_title: 'Ganesh Utsav 2025',
-                event_description: 'A grand celebration with cultural programs and decorations.',
-                event_destination: 'Shree Ganesh Mandir, Pune',
-                event_location_map_link: 'https://maps.google.com'
-            },
-            {
-                event_monetize_qr_path: '../../../assets/event1.jpeg',
-                event_sub_title: 'Diwali Mela',
-                event_description: 'Festive stalls, fireworks, and music performances.',
-                event_destination: 'Shivaji Nagar Ground, Mumbai',
-                event_location_map_link: 'https://maps.google.com'
-            }
-        ];
+        const getEvents = async () => {
+            const data = await fetchEvents();
+            setEvents(data);
+        };
 
-        setEvents(localEvents);
+        getEvents(); // initial load
+
+        // Refresh every 1 second
+        const interval = setInterval(getEvents, 5000);
+
+        // Cleanup on unmount
+        return () => clearInterval(interval);
     }, []);
+
+
+    // const [events, setEvents] = useState([]);
+
+    // useEffect(() => {
+    //     AOS.init({ duration: 1000, once: true });
+
+    //     // Local events array
+    //     const localEvents = [
+    //         {
+    //             event_monetize_qr_path: 'uploads/images/events/online_qr_evt0001.jpeg',
+    //             event_sub_title: 'Ganesh Utsav 2025',
+    //             event_description: 'A grand celebration with cultural programs and decorations.',
+    //             event_destination: 'Shree Ganesh Mandir, Pune',
+    //             event_location_map_link: 'https://maps.google.com'
+    //         },
+    //         {
+    //             event_monetize_qr_path: 'uploads/images/events/online_qr_evt0001.jpeg',
+    //             event_sub_title: 'Diwali Mela',
+    //             event_description: 'Festive stalls, fireworks, and music performances.',
+    //             event_destination: 'Shivaji Nagar Ground, Mumbai',
+    //             event_location_map_link: 'https://maps.google.com'
+    //         }
+    //     ];
+
+    //     setEvents(localEvents);
+    // }, []);
 
 
     return (
@@ -72,12 +77,18 @@ function WebsiteEvents() {
                         <div className="col-12 mt-3">
                             <div className="d-flex justify-content-center">
                                 <div className="d-flex gap-4 w-75 search-nearby-events-fields">
-                                    <select name="" id="" className='form-control'>
-                                        <option value="" selected disabled>Select city name</option>
+                                    <select name="" id="" className="form-control" defaultValue="">
+                                        <option value="" disabled>
+                                            Select city name
+                                        </option>
                                     </select>
-                                    <select name="" id="" className='form-control'>
-                                        <option value="" selected disabled>Select event name</option>
+
+                                    <select name="" id="" className="form-control" defaultValue="">
+                                        <option value="" disabled>
+                                            Select event name
+                                        </option>
                                     </select>
+
                                     <button className="btn btn-success">Search</button>
                                 </div>
                             </div>
