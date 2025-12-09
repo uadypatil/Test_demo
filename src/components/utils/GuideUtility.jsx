@@ -113,39 +113,63 @@ function GuideUtility() {
                             <div className="guide-3 h-100" id="doner">
                                 <h4>Doner Guidelines</h4>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    As a donor, your contributions support cultural, religious, and festival-based events. The e-Pavti Book system ensures a seamless, transparent donation process with digital receipts that you can proudly share.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    <strong>Step 1: Donate</strong> - Approach an Event Manager at the event or use the provided link/QR code to record your donation. Provide your name, phone number, amount, and any optional details like purpose or address.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    <strong>Step 2: Receive Receipt</strong> - After donation entry, you'll instantly get a unique link or QR code to your animated, theme-based digital receipt. View it online via the link on any device.
+                                </p>
+                                <p>
+                                    <strong>Step 3: Share Your Contribution</strong> - Download the receipt or share it directly on social media platforms like WhatsApp, Instagram, or Facebook. This promotes community engagement and showcases your support for the event.
+                                </p>
+                                <p>
+                                    <strong>Additional Tips:</strong> - Ensure your contact details are accurate for future updates. Receipts are secure and traceable, reducing paper usage while maintaining transparency. If issues arise, contact the Event Manager or Organizer via the event dashboard.
                                 </p>
                             </div>
 
                             <div className="guide-2 mt-5" id="manager">
                                 <h4>Event Manager Guidelines</h4>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    Event Managers play a key role in collecting donations efficiently during events. Use the e-Pavti Book system to record contributions securely and generate shareable receipts on-the-go.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    <strong>Step 1: Register and Access</strong> - Scan the event-specific QR code provided by the Organizer to register or log in. You'll gain access only to your assigned event dashboard.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    <strong>Step 2: Record Donations</strong> - Enter donor details including name, phone, amount, purpose, and address via the simple form. The system validates inputs to prevent errors and assigns a unique receipt number automatically.
+                                </p>
+                                <p>
+                                    <strong>Step 3: Generate and Share Receipts</strong> - Instantly create animated, event-themed digital receipts. Share the unique link or QR code with the donor via SMS, email, or directly. Donors can download or post on social media.
+                                </p>
+                                <p>
+                                    <strong>Step 4: Track Revenue</strong> - Monitor real-time donation lists and totals in your dashboard. Report any discrepancies to the Organizer for approval or analytics.
+                                </p>
+                                <p>
+                                    <strong>Additional Tips:</strong> - Ensure a stable internet connection for real-time syncing. Use mobile-responsive interface for on-site use. Maintain donor privacy by not sharing sensitive data without consent.
                                 </p>
                             </div>
 
                             <div className="guide-1 mt-5" id='organizer'>
                                 <h4>Event Organizer Guide Lines</h4>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    As an Event Organizer, the e-Pavti Book system empowers you to manage events digitally, from creation to revenue tracking, ensuring transparency and efficiency.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    <strong>Step 1: Create Account and Log In</strong> - Register on the platform and log in to access your Organizer dashboard. Admins can approve your account if needed.
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, sunt nobis neque animi, consectetur harum voluptatem accusantium maiores fuga incidunt distinctio quia, quod quibusdam similique illum nemo. Quo quaerat at suscipit illum architecto, eligendi mollitia quidem voluptas nobis beatae quibusdam eius vitae rerum, distinctio ducimus quae laborum explicabo. Eius, molestias.
+                                    <strong>Step 2: Create Event</strong> - Fill in event details like name, date, theme, and description. The system auto-generates a unique QR code for Event Manager registration.
+                                </p>
+                                <p>
+                                    <strong>Step 3: Manage Event Managers</strong> - Share the QR code with your team. Approve or block registrations via the dashboard to control access.
+                                </p>
+                                <p>
+                                    <strong>Step 4: Dashboard and Reports</strong> - Track total donations, donor lists, and event statistics in real-time. Generate comprehensive reports for revenues and analytics. Review all entries for accuracy.
+                                </p>
+                                <p>
+                                    <strong>Additional Tips:</strong> - Customize receipt themes to match your event for better engagement. Use the centralized database for audits. For multiple events, create separate QR codes to avoid overlap. Contact Admin for system-wide issues.
                                 </p>
                             </div>
                         </div>
